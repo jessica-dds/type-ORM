@@ -1,9 +1,10 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
-
-export class Usuarios1727222170009 implements MigrationInterface {
-
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        const table = new Table({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Usuarios1727222170009 = void 0;
+const typeorm_1 = require("typeorm");
+class Usuarios1727222170009 {
+    async up(queryRunner) {
+        const table = new typeorm_1.Table({
             name: 'users',
             columns: [
                 {
@@ -26,13 +27,11 @@ export class Usuarios1727222170009 implements MigrationInterface {
                     type: 'text',
                 }
             ]
-        })
-        await queryRunner.createTable(table)
-
+        });
+        await queryRunner.createTable(table);
     }
-
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('users')
+    async down(queryRunner) {
+        await queryRunner.dropTable('users');
     }
-
 }
+exports.Usuarios1727222170009 = Usuarios1727222170009;
